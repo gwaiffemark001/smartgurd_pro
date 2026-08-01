@@ -37,6 +37,7 @@
   .text-large{font-size:17px;}
   .add-top-margin{margin-top:14px;}
   .no-top-margin{margin-top:0;}
+  .full-width{flex:1 1 100%;}
 
   .image{max-width:100%; border-radius:4px; border:1px solid #e3e6ea;}
   .image-caption{font-size:13px; color:#8a93a0; margin-top:6px;}
@@ -68,7 +69,11 @@
   .team-card h3{font-size:16px; margin:0 0 4px;}
   .team-card div{font-size:13px; color:#8a93a0;}
 
-  .shot-slot{border:1px dashed #c7d0da; border-radius:6px; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; color:#8a93a0; font-size:13px; text-align:center; padding:16px;}
+  .shot-slot{border:1px solid #e3e6ea; border-radius:6px; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fafbfc;}
+  .shot-slot img{width:100%; height:100%; object-fit:cover;}
+
+  .video-container{width:100%; max-width:800px; margin:20px 0;}
+  .video-container video{width:100%; border-radius:6px; border:1px solid #e3e6ea; background:#000;}
 
   .footer-container{background:#1b2733; color:#93a0af; text-align:center; padding:26px; font-size:13px;}
   .footer-container a{color:#c7d0da;}
@@ -104,9 +109,9 @@
       and calls or texts an emergency contact automatically — with a Flutter app for live remote monitoring.
     </p>
     <div class="control-group">
-      <a class="custom-button custom-button-primary" href="https://github.com/gwaiffemark001/smartgurd_pro.git" target="_blank">View the running system</a>
+      <a class="custom-button custom-button-primary" href="#video-demo">Watch Demo Video</a>
       <a class="custom-button" href="https://github.com/gwaiffemark001/smartgurd_pro.git" target="_blank">Source on GitHub</a>
-      <a class="custom-button" href="https://github.com/gwaiffemark001/smartgurd_pro/tree/main/Firmware/report.pdf" target="_blank">Project report (PDF)</a>
+      <a class="custom-button" href="Firmware/report.pdf" target="_blank">Project report (PDF)</a>
     </div>
   </div>
 </div>
@@ -207,14 +212,36 @@
     </div>
 
     <!-- Results -->
-     <h2 id="results">Results</h2>
-    <hr>
+    <div class="flex-row">
+      <div class="flex-item flex-column full-width">
+        <h2 id="results" class="no-top-margin">Results</h2>
+        <hr>
+      </div>
+    </div>
+    
     <div class="flex-row">
       <div class="flex-item flex-column">
-         <div class="shot-slot"><img src="https://github.com/gwaiffemark001/smartgurd_pro/tree/main/Firmware/img1.jpeg" alt="Description of the image"></div>
+         <div class="shot-slot"><img src="Firmware/img1.jpeg" alt="System setup and hardware components"></div>
+         <p class="image-caption">Figure 1: Hardware setup with Arduino, sensors, and GSM module</p>
       </div>
       <div class="flex-item flex-column">
-        <div class="shot-slot"><img src="https://github.com/gwaiffemark001/smartgurd_pro/tree/main/Firmware/img2.jpeg" alt="Description of the image"></div>
+        <div class="shot-slot"><img src="Firmware/img2.jpeg" alt="Mobile app interface showing live monitoring"></div>
+        <p class="image-caption">Figure 2: Flutter mobile app displaying real-time sensor data</p>
+      </div>
+    </div>
+
+    <!-- Video Demo -->
+    <div class="flex-row" id="video-demo">
+      <div class="flex-item flex-column full-width">
+        <h3>System Demonstration Video</h3>
+        <hr>
+        <div class="video-container">
+          <video controls poster="Firmware/img1.jpeg">
+            <source src="Firmware/smartguard.mp4" type="video/mp4">
+            Your browser does not support the video tag. <a href="Firmware/smartguard.mp4" download>Download the video</a> instead.
+          </video>
+        </div>
+        <p class="text">Watch the complete system in action: sensor detection, local alarms, GSM alerts, and remote monitoring through the mobile app.</p>
       </div>
     </div>
 
@@ -260,8 +287,8 @@
 <div class="footer-container">
   SmartGuard Pro — CSC 1304 Practical Skills Development, Makerere University · Year 1<br>
   <a href="https://github.com/gwaiffemark001/smartgurd_pro.git" target="_blank">GitHub</a> ·
-  <a href="https://github.com/gwaiffemark001/smartgurd_pro/tree/main/Firmware/report.pdf" target="_blank">Report</a> ·
-  <a href="https://github.com/gwaiffemark001/smartgurd_pro/tree/main/Firmware/poster.pdf" target="_blank">Poster</a><br>
+  <a href="Firmware/report.pdf" target="_blank">Report</a> ·
+  <a href="Firmware/poster.pdf" target="_blank">Poster</a><br>
   Built on the layout conventions of the
   <a href="https://github.com/yenchiah/project-website-template" target="_blank">project-website-template</a> by Dr. Yen-Chia Hsu.
 </div>
